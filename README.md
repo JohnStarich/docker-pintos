@@ -9,9 +9,19 @@ docker pull johnstarich/pintos
 # 2) Test with the following:
 docker run --rm -it johnstarich/pintos
 root@52bab93f4f85:/pintos# pintos -q run alarm-multiple
+# Expected output:
+    <snip logs>
+    (alarm-multiple) end
+    Execution of 'alarm-multiple' complete.
+    Timer: 616 ticks
+    Thread: 0 idle ticks, 617 kernel ticks, 0 user ticks
+    Console: 2954 characters output
+    Keyboard: 0 keys pressed
+    Powering off...
+# End expected output
 
-# 3) If the above worked, then you should be all set to run your own
-docker run --detach --tty --name pintos johnstarich/pintos
+# 3) If the above worked, then you should be all set to run your own persistent Pintos container
+docker run --detach --name pintos johnstarich/pintos
 docker exec -it pintos bash
 root@fee7c5371398:/pintos# echo 'Hello World!'
 root@fee7c5371398:/pintos# exit
