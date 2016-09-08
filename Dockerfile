@@ -39,7 +39,8 @@ ENV PATH=/pintos/utils:$PATH
 
 # Fix ACPI bug
 ## Fix described here under "Troubleshooting": http://arpith.xyz/2016/01/getting-started-with-pintos/
-RUN sed -i '/serial_flush ();/a outw( 0x604, 0x0 | 0x2000 );' /pintos/devices/shutdown.c
+RUN sed -i '/serial_flush ();/a \
+  outw( 0x604, 0x0 | 0x2000 );' /pintos/devices/shutdown.c
 
 # Configure Pintos for QEMU
 RUN sed -i 's/bochs/qemu/' /pintos/*/Make.vars
