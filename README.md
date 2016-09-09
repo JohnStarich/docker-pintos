@@ -4,10 +4,10 @@ Pintos in a Docker container
 
 ```bash
 # 1) Pull the image
-docker pull johnstarich/pintos
+docker pull johnstarich/pintos:v1.0
 
 # 2) Test with the following:
-docker run --rm -it johnstarich/pintos
+docker run --rm -it johnstarich/pintos:v1.0
 root@52bab93f4f85:/pintos# pintos -q run alarm-multiple
 # Expected output:
     <snip logs>
@@ -21,7 +21,7 @@ root@52bab93f4f85:/pintos# pintos -q run alarm-multiple
 # End expected output
 
 # 3) If the above worked, then you should be all set to run your own persistent Pintos container
-docker run --detach --name pintos johnstarich/pintos
+docker run --detach --name pintos johnstarich/pintos:v1.0
 docker exec -it pintos bash
 root@fee7c5371398:/pintos# echo 'Hello World!'
 root@fee7c5371398:/pintos# exit
