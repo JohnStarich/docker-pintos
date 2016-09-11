@@ -22,6 +22,7 @@ RUN apt-get update && \
     DEBIAN_FRONTEND=noninterative \
         apt-get install -y --no-install-recommends \
             coreutils \
+			manpages-dev \
             xorg openbox \
             ncurses-dev \
             wget \
